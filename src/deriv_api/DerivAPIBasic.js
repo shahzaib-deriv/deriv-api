@@ -131,7 +131,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
     }
 
     isConnectionClosed() {
-        return this.connection.readyState === 2 || this.connection.readyState === 3;
+        return this.connection.readyState !== WebSocket.OPEN;
     }
 
     sendAndGetSource(request) {
